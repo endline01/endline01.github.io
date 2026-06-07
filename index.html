@@ -34,6 +34,14 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- Animated background: subtle dust-particle loop (dark theme only).
+       Video: "Dust Particles 5" by VFX FOOTAGE, CC BY 3.0, via Wikimedia Commons. -->
+  <div class="bg-fx" aria-hidden="true">
+    <video class="bg-fx__video" autoplay muted loop playsinline preload="auto" tabindex="-1">
+      <source src="assets/bg.webm" type="video/webm" />
+    </video>
+  </div>
+
   <!-- ===================== TOP APP BAR ===================== -->
   <header class="app-bar" id="appBar">
     <div class="container app-bar__inner">
@@ -524,6 +532,9 @@
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.4 7.1a.6.6 0 0 0-.2-.5L2.8 4.9v-.2h4.2l3.3 7.2 2.9-7.2H17v.2l-1.2 1.1a.3.3 0 0 0-.1.3v8.8a.3.3 0 0 0 .1.3l1.1 1.1v.2h-5.6v-.2l1.2-1.2c.1-.1.1-.1.1-.3V8.1l-3.3 8.3h-.4L5.2 8.1v5.6c0 .2.1.4.2.6l1.5 1.9v.2H2.8v-.2l1.5-1.9c.1-.2.2-.4.1-.6V7.1Z"/></svg>
         </a>
       </div>
+    </div>
+    <div class="container">
+      <p class="footer__credit">Background loop: &ldquo;Dust Particles 5&rdquo; by VFX FOOTAGE, licensed <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Dust_Particles_5_--FREE_FOOTAGE--.webm" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>.</p>
     </div>
   </footer>
 

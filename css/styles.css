@@ -51,6 +51,28 @@
   --section-gap: clamp(4rem, 9vw, 7.5rem);
 }
 
+/* ── Animated background: dust-particle video (dark theme only) ────────────*/
+.bg-fx { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.bg-fx__video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity 700ms var(--md-sys-motion-easing-standard);
+}
+/* In dark mode, "screen" blend removes the footage's black background so only
+   the particles show; tinted toward the theme's cyan and kept subtle. */
+[data-theme="dark"] .bg-fx__video {
+  opacity: 0.65; mix-blend-mode: screen;
+  filter: sepia(1) hue-rotate(140deg) saturate(2.2) brightness(1.05);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .bg-fx__video {
+    opacity: 0.65; mix-blend-mode: screen;
+    filter: sepia(1) hue-rotate(140deg) saturate(2.2) brightness(1.05);
+  }
+}
+/* Lift real content above the backdrop. */
+main, .footer { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) { .bg-fx { display: none; } }
+
 /* ── Reset / base ──────────────────────────────────────────────────────────*/
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -460,6 +482,9 @@ body[data-nav-open="true"] { overflow: hidden; }
 .footer__links { display: flex; gap: 0.5rem; }
 .footer__links a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--md-sys-shape-full); color: var(--md-sys-color-on-surface-variant); }
 .footer__links svg { width: 20px; height: 20px; }
+.footer__credit { margin-top: 1rem; font-size: 0.72rem; line-height: 1.5; color: var(--md-sys-color-on-surface-variant); opacity: 0.7; }
+.footer__credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.footer__credit a:hover { color: var(--md-sys-color-primary); }
 
 /* ===========================================================================
    REVEAL MOTION

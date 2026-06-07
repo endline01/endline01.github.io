@@ -154,6 +154,15 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+  /* ── Background video: pause under reduced-motion to save resources ────────*/
+  (function bgVideo() {
+    var v = document.querySelector(".bg-fx__video");
+    if (!v) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      v.removeAttribute("autoplay"); v.pause();
+    }
+  })();
+
   /* ── Hero name: one-time "decode" / text-scramble on load ─────────────────*/
   (function decodeName() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;

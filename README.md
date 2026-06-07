@@ -70,10 +70,26 @@ Portfolio/
 │                          #   state layers, motion, layout, components
 ├─ js/
 │  └─ main.js              # Theme toggle, mobile nav, scroll-spy, reveal motion
+├─ assets/
+│  └─ bg.webm              # Background dust-particle loop (dark theme only)
 ├─ tools/
 │  └─ generate_theme.py    # Re-generates css/theme.css from one seed color
 └─ README.md
 ```
+
+### Background video
+
+`assets/bg.webm` is a subtle dust-particle loop shown **only in dark mode** (a
+`screen` blend drops the footage's black background so only the particles glow;
+it's tinted toward the theme's cyan and disabled under `prefers-reduced-motion`).
+
+- **Credit (required):** "Dust Particles 5" by *VFX FOOTAGE*, licensed
+  [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/), via
+  [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Dust_Particles_5_--FREE_FOOTAGE--.webm).
+  The attribution line is in the page footer; keep it while you use the clip.
+- **To replace it:** drop your own `bg.webm` (or add a `bg.mp4` `<source>` in
+  `index.html`) into `assets/`, and update the footer credit to match the new
+  clip's license.
 
 ---
 
