@@ -124,10 +124,13 @@ site:
 > the error palette uses M3's canonical constant tones.
 
 ### Light / dark behavior
-- With **no** `data-theme` attribute on `<html>`, the site follows the OS via
-  `prefers-color-scheme`.
-- The header toggle sets `data-theme="light"` or `"dark"` and persists the choice
-  in `localStorage` (applied before first paint to avoid a flash).
+- **Dark is the default** (`<html data-theme="dark">`). First-time visitors see
+  the dark theme regardless of their OS setting.
+- The header toggle switches to light/dark and persists the choice in
+  `localStorage` (re-applied before first paint to avoid a flash), so a returning
+  visitor keeps whatever they last selected.
+- To make **light** the default instead, just remove `data-theme="dark"` from the
+  `<html>` tag in `index.html`.
 
 ---
 
