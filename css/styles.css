@@ -147,12 +147,17 @@ img, svg { display: block; }
   border-radius: var(--md-sys-shape-full);
   font: 500 0.875rem/1 var(--md-ref-typeface-plain); letter-spacing: 0.006em;
   background: transparent; color: var(--md-sys-color-primary);
-  transition: box-shadow var(--md-sys-motion-short) var(--md-sys-motion-easing-standard),
-              background-color var(--md-sys-motion-short) var(--md-sys-motion-easing-standard);
+  transition: box-shadow var(--md-sys-motion-medium) var(--md-sys-motion-easing-standard),
+              background-color var(--md-sys-motion-short) var(--md-sys-motion-easing-standard),
+              transform var(--md-sys-motion-short) var(--md-sys-motion-easing-emphasized);
 }
-.btn svg { width: 18px; height: 18px; }
-.btn--filled { background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); }
-.btn--filled:hover { box-shadow: var(--md-sys-elevation-1); }
+.btn svg { width: 18px; height: 18px; transition: transform var(--md-sys-motion-medium) var(--md-sys-motion-easing-emphasized); }
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+/* Nudge the hero call-to-action arrow on hover (its only icon is trailing) */
+.hero__actions .btn--filled:hover svg { transform: translateX(4px); }
+.btn--filled { background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); box-shadow: var(--md-sys-elevation-1); }
+.btn--filled:hover { box-shadow: var(--md-sys-elevation-2); }
 .btn--tonal { background: var(--md-sys-color-secondary-container); color: var(--md-sys-color-on-secondary-container); }
 .btn--outlined { border: 1px solid var(--md-sys-color-outline); color: var(--md-sys-color-primary); }
 .btn--text { padding-inline: 0.9rem; }
@@ -163,7 +168,9 @@ img, svg { display: block; }
   border: none; background: transparent; cursor: pointer;
   border-radius: var(--md-sys-shape-full); color: var(--md-sys-color-on-surface-variant);
 }
-.icon-btn svg { width: 22px; height: 22px; }
+.icon-btn svg { width: 22px; height: 22px; transition: transform var(--md-sys-motion-medium) var(--md-sys-motion-easing-emphasized); }
+#themeToggle:hover svg { transform: rotate(20deg) scale(1.05); }
+#themeToggle:active svg { transform: rotate(20deg) scale(0.9); }
 
 /* ── Chips (M3 assist/suggestion style) ───────────────────────────────────*/
 .chip-set { display: flex; flex-wrap: wrap; gap: 0.5rem; }
@@ -175,7 +182,15 @@ img, svg { display: block; }
   background: var(--md-sys-color-surface-container-low);
   color: var(--md-sys-color-on-surface-variant);
   font: 500 0.8125rem/1 var(--md-ref-typeface-mono); letter-spacing: 0.02em;
-  transition: border-color var(--md-sys-motion-short) var(--md-sys-motion-easing-standard);
+  transition: border-color var(--md-sys-motion-short) var(--md-sys-motion-easing-standard),
+              color var(--md-sys-motion-short) var(--md-sys-motion-easing-standard),
+              background-color var(--md-sys-motion-short) var(--md-sys-motion-easing-standard),
+              transform var(--md-sys-motion-short) var(--md-sys-motion-easing-emphasized);
+}
+.chip:hover {
+  transform: translateY(-2px);
+  color: var(--md-sys-color-on-surface);
+  border-color: color-mix(in srgb, var(--md-sys-color-primary) 50%, var(--md-sys-color-outline-variant));
 }
 .chip--accent {
   border-color: color-mix(in srgb, var(--md-sys-color-primary) 45%, transparent);
@@ -241,11 +256,16 @@ img, svg { display: block; }
   color: var(--md-sys-color-on-surface-variant);
   transition: color var(--md-sys-motion-short) var(--md-sys-motion-easing-standard);
 }
-.nav__link[aria-current="true"] { color: var(--md-sys-color-primary); }
-.nav__link[aria-current="true"]::after {
-  content: ""; position: absolute; left: 0.85rem; right: 0.85rem; bottom: 2px; height: 2px;
-  border-radius: 2px; background: var(--md-sys-color-primary);
+.nav__link::after {
+  content: ""; position: absolute; left: 50%; right: 50%; bottom: 4px; height: 2px;
+  border-radius: 2px; background: currentColor; opacity: 0;
+  transition: left var(--md-sys-motion-medium) var(--md-sys-motion-easing-emphasized),
+              right var(--md-sys-motion-medium) var(--md-sys-motion-easing-emphasized),
+              opacity var(--md-sys-motion-short) var(--md-sys-motion-easing-standard);
 }
+.nav__link:hover::after { left: 0.85rem; right: 0.85rem; opacity: 0.5; }
+.nav__link[aria-current="true"] { color: var(--md-sys-color-primary); }
+.nav__link[aria-current="true"]::after { left: 0.85rem; right: 0.85rem; opacity: 1; }
 .app-bar__actions { display: flex; align-items: center; gap: 0.25rem; }
 
 .nav-toggle { display: none; }
@@ -288,10 +308,18 @@ body[data-nav-open="true"] { overflow: hidden; }
   mask-image: radial-gradient(120% 80% at 75% 0%, #000 0%, transparent 70%);
   -webkit-mask-image: radial-gradient(120% 80% at 75% 0%, #000 0%, transparent 70%);
 }
-.hero__glow {
-  position: absolute; z-index: 0; top: -22%; right: -8%; width: 46rem; height: 46rem;
-  background: radial-gradient(circle, color-mix(in srgb, var(--md-sys-color-primary) 22%, transparent), transparent 62%);
-  pointer-events: none; filter: blur(8px);
+/* One-time scan line sweeping down the hero — a subtle "scanner" motif. */
+.hero::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; z-index: 0;
+  background: linear-gradient(90deg, transparent, var(--md-sys-color-primary), transparent);
+  opacity: 0;
+  animation: hero-scan 2600ms var(--md-sys-motion-easing-standard) 250ms 1 forwards;
+  pointer-events: none;
+}
+@keyframes hero-scan {
+  0%   { transform: translateY(0);     opacity: 0; }
+  12%  { opacity: 0.55; }
+  100% { transform: translateY(58vh);  opacity: 0; }
 }
 .hero__inner { position: relative; z-index: 1; max-width: 56rem; }
 .hero__status {
@@ -301,7 +329,15 @@ body[data-nav-open="true"] { overflow: hidden; }
   background: var(--md-sys-color-surface-container-low);
   color: var(--md-sys-color-on-surface-variant);
 }
-.hero__status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--md-sys-color-primary); box-shadow: 0 0 0 4px color-mix(in srgb, var(--md-sys-color-primary) 25%, transparent); }
+.hero__status .dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--md-sys-color-primary);
+  animation: dot-pulse 2400ms var(--md-sys-motion-easing-standard) infinite;
+}
+@keyframes dot-pulse {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--md-sys-color-primary) 45%, transparent); }
+  70%  { box-shadow: 0 0 0 8px color-mix(in srgb, var(--md-sys-color-primary) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--md-sys-color-primary) 0%, transparent); }
+}
 .hero h1 { margin-bottom: 1rem; }
 .hero h1 .accent { color: var(--md-sys-color-primary); }
 .hero__role { color: var(--md-sys-color-on-surface-variant); margin-bottom: 1.5rem; }
@@ -351,7 +387,8 @@ body[data-nav-open="true"] { overflow: hidden; }
 .projects-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
 .project__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.1rem; }
 .project__num { color: var(--md-sys-color-on-surface-variant); }
-.project__icon { color: var(--md-sys-color-primary); }
+.project__icon { color: var(--md-sys-color-primary); transition: transform var(--md-sys-motion-medium) var(--md-sys-motion-easing-emphasized); }
+.project.card--interactive:hover .project__icon { transform: scale(1.12) translateY(-1px); }
 .project__icon svg { width: 26px; height: 26px; }
 .project h3 { margin-bottom: 0.6rem; color: var(--md-sys-color-on-surface); }
 .project p { color: var(--md-sys-color-on-surface-variant); margin-bottom: 1.25rem; }
@@ -399,12 +436,20 @@ body[data-nav-open="true"] { overflow: hidden; }
   background: var(--md-sys-color-surface-container);
   border: 1px solid var(--md-sys-color-outline-variant);
   border-radius: var(--md-sys-shape-xl);
-  padding: clamp(2rem, 5vw, 3.5rem);
-  text-align: center;
-  overflow: hidden; position: relative;
+  padding: clamp(2.75rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3.5rem);
+  text-align: center; overflow: hidden; position: relative;
+  display: flex; flex-direction: column; align-items: center;
 }
-.contact-card .hero__glow { top: auto; bottom: -40%; left: 50%; transform: translateX(-50%); right: auto; width: 36rem; height: 30rem; }
+/* Blueprint dot-grid — a technical texture that fades toward the edges. */
+.contact-card::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image: radial-gradient(var(--md-sys-color-outline-variant) 1.1px, transparent 1.1px);
+  background-size: 22px 22px; opacity: 0.55;
+  -webkit-mask-image: radial-gradient(125% 125% at 50% 45%, #000 30%, transparent 72%);
+  mask-image: radial-gradient(125% 125% at 50% 45%, #000 30%, transparent 72%);
+}
 .contact-card > * { position: relative; z-index: 1; }
+.contact-card .section-eyebrow { justify-content: center; }
 .contact-card h2 { margin-bottom: 0.9rem; }
 .contact-card p { color: var(--md-sys-color-on-surface-variant); max-width: 46ch; margin: 0 auto 2rem; }
 .contact-links { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
@@ -419,10 +464,24 @@ body[data-nav-open="true"] { overflow: hidden; }
 /* ===========================================================================
    REVEAL MOTION
    =========================================================================== */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity var(--md-sys-motion-long) var(--md-sys-motion-easing-decelerate), transform var(--md-sys-motion-long) var(--md-sys-motion-easing-decelerate); }
-.reveal.is-visible { opacity: 1; transform: none; }
+.reveal {
+  opacity: 0;
+  transform: translateY(26px) scale(0.985);
+  filter: blur(5px);
+  transition:
+    opacity 620ms var(--md-sys-motion-easing-decelerate),
+    transform 760ms var(--md-sys-motion-easing-emphasized),
+    filter 620ms var(--md-sys-motion-easing-decelerate);
+}
+.reveal.is-visible { opacity: 1; transform: none; filter: none; }
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 /* ===========================================================================
