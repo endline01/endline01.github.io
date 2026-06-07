@@ -51,6 +51,17 @@
   --section-gap: clamp(4rem, 9vw, 7.5rem);
 }
 
+/* ── Animated background canvas (digital rain) ─────────────────────────────*/
+#bgfx {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  /* Slightly stronger in dark mode where the rain reads as cinematic. */
+  opacity: 0.55;
+}
+[data-theme="dark"] #bgfx { opacity: 0.8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #bgfx { opacity: 0.8; } }
+/* Lift real content above the animated backdrop. */
+main, .footer { position: relative; z-index: 1; }
+
 /* ── Reset / base ──────────────────────────────────────────────────────────*/
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -304,7 +315,7 @@ body[data-nav-open="true"] { overflow: hidden; }
     linear-gradient(var(--md-sys-color-outline-variant) 1px, transparent 1px),
     linear-gradient(90deg, var(--md-sys-color-outline-variant) 1px, transparent 1px);
   background-size: 56px 56px;
-  opacity: 0.35;
+  opacity: 0.18;
   mask-image: radial-gradient(120% 80% at 75% 0%, #000 0%, transparent 70%);
   -webkit-mask-image: radial-gradient(120% 80% at 75% 0%, #000 0%, transparent 70%);
 }
