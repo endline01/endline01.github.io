@@ -178,8 +178,8 @@
         out += i < Math.floor(reveal) ? final[i] : pool[(Math.random() * pool.length) | 0];
       }
       el.textContent = out;
-      reveal += 0.6;
+      reveal += 1.1;
       if (reveal >= final.length) { el.textContent = final; clearInterval(tick); }
-    }, 45);
+    }, 38);
   })();
 })();

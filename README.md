@@ -79,9 +79,12 @@ Portfolio/
 
 ### Background video
 
-`assets/bg.webm` is a subtle dust-particle loop shown **only in dark mode** (a
-`screen` blend drops the footage's black background so only the particles glow;
-it's tinted toward the theme's cyan and disabled under `prefers-reduced-motion`).
+`assets/bg.webm` is a subtle dust-particle loop shown in **both themes**, tinted
+toward the theme's cyan and disabled under `prefers-reduced-motion`:
+- **Dark:** a `screen` blend drops the footage's black background so the
+  particles glow as light motes.
+- **Light:** the clip is inverted and `multiply`-blended, so the particles read
+  as soft dark motes drifting over the page.
 
 - **Credit (required):** "Dust Particles 5" by *VFX FOOTAGE*, licensed
   [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/), via
