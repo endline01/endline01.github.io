@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osama Hussein — Cybersecurity Specialist & Penetration Tester</title>
+  <meta name="description" content="Osama Hussein — Cybersecurity Specialist, Penetration Tester, and Information Security Officer based in Amman, Jordan. Penetration testing, security operations, and security monitoring." />
+  <meta name="author" content="Osama Hussein" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Osama Hussein — Cybersecurity Specialist & Penetration Tester" />
+  <meta property="og:description" content="Penetration testing, security operations, and security monitoring. Based in Amman, Jordan." />
+
+  <!-- Prevent theme flash: apply saved theme before paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts: Roboto (M3 plain) + Roboto Mono (technical accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='7' fill='%23006973'/&gt;&lt;text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'&gt;OH&lt;/text&gt;&lt;/svg&gt;" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== TOP APP BAR ===================== -->
+  <header class="app-bar" id="appBar">
+    <div class="container app-bar__inner">
+      <a class="brand state" href="#top" aria-label="Osama Hussein — home">
+        <span class="brand__mark" aria-hidden="true">OH</span>
+        <span class="brand__name">Osama Hussein<small>Security Specialist</small></span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link state" href="#about">About</a>
+        <a class="nav__link state" href="#experience">Experience</a>
+        <a class="nav__link state" href="#skills">Skills</a>
+        <a class="nav__link state" href="#projects">Projects</a>
+        <a class="nav__link state" href="#credentials">Credentials</a>
+        <a class="nav__link state" href="#contact">Contact</a>
+      </nav>
+
+      <div class="app-bar__actions">
+        <button class="icon-btn state" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        </button>
+        <button class="icon-btn state nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navDrawer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav drawer -->
+  <div class="nav-scrim" id="navScrim" hidden></div>
+  <aside class="nav-drawer" id="navDrawer" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="nav-drawer__head">
+      <span class="label-mono" style="color:var(--md-sys-color-on-surface-variant)">Menu</span>
+      <button class="icon-btn state" id="navClose" type="button" aria-label="Close navigation menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <a class="state" href="#about">About</a>
+    <a class="state" href="#experience">Experience</a>
+    <a class="state" href="#skills">Skills</a>
+    <a class="state" href="#tools">Tools</a>
+    <a class="state" href="#projects">Projects</a>
+    <a class="state" href="#education">Education</a>
+    <a class="state" href="#credentials">Credentials</a>
+    <a class="state" href="#contact">Contact</a>
+  </aside>
+
+  <main id="main">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="top">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="hero__status reveal label-l">
+          <span class="dot" aria-hidden="true"></span>
+          Information Security Officer at JODDB &middot; Amman, Jordan
+        </p>
+        <h1 class="display-l reveal">Osama Hussein</h1>
+        <p class="hero__role title-l reveal">
+          <b>Cybersecurity Specialist</b> &amp; <b>Penetration Tester</b> &mdash; Information Security Officer
+        </p>
+        <p class="hero__summary body-l reveal">
+          Penetration tester with a degree in Cybersecurity and proven experience in
+          penetration testing, bug hunting, and ethical hacking &mdash; identifying
+          vulnerabilities, analyzing threats, and implementing effective remediation
+          across network, web, API, and mobile applications.
+        </p>
+        <div class="hero__meta reveal">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Amman, Jordan
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+            Bachelor of Cybersecurity
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            Available for security engagements
+          </span>
+        </div>
+        <div class="hero__actions reveal">
+          <a class="btn btn--filled state" href="#contact">
+            Get in touch
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn--outlined state" href="#projects">View projects</a>
+          <a class="btn btn--text state" href="https://github.com/endline01" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 8.8 21.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7c-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.7-4.6 5 .3.3.6.9.6 1.8v2.7c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow label-mono">Profile <span class="section-index">/ 01</span></p>
+          <h2 class="display-s">Security from offense to operations</h2>
+        </div>
+        <div class="comp-grid">
+          <div class="card reveal" style="grid-column: 1 / -1;">
+            <p class="body-l" style="max-width: 75ch; color: var(--md-sys-color-on-surface);">
+              Cybersecurity specialist and penetration tester with a degree in Cybersecurity and
+              proven experience in penetration testing, bug hunting, and ethical hacking. Skilled in
+              identifying security vulnerabilities, analyzing threats, and implementing effective
+              remediation strategies. Adept at using static and dynamic analysis tools to evaluate
+              code security, and advising development teams on best practices for secure software
+              development.
+            </p>
+            <hr class="divider" style="margin-block: 1.75rem;" />
+            <p class="body-m" style="max-width: 75ch; color: var(--md-sys-color-on-surface-variant);">
+              Day to day, this spans offensive engagements across network, web, API, and mobile
+              targets; defensive work in security operations and network security monitoring; and
+              infrastructure and DevSecOps engineering &mdash; bridging security operations,
+              infrastructure deployment, and automation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow label-mono">Experience <span class="section-index">/ 02</span></p>
+          <h2 class="display-s">Professional experience</h2>
+          <p class="section-lead body-l">Roles spanning offensive testing, security operations, infrastructure engineering, training delivery, and CTF design.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- JODDB -->
+          <article class="xp card reveal">
+            <div class="xp__head" style="flex-direction: column; align-items: flex-start; grid-column: 1;">
+              <div>
+                <h3 class="title-l">Information Technology &amp; Cyber Security Officer</h3>
+                <p class="xp__org title-s">Jordan Design and Development Bureau (JODDB)</p>
+              </div>
+              <p class="xp__period label-l">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                09/2024 &ndash; Present
+              </p>
+              <p class="xp__type label-l">Full-time &middot; Amman, Jordan</p>
+            </div>
+            <div class="xp__list">
+              <div class="xp__item"><span class="marker" aria-hidden="true"></span><div><h4 class="title-s">Network penetration testing</h4><p class="body-m">Conducted authorized adversarial simulations against network infrastructure to evaluate security control efficacy and identify exploitable vulnerabilities.</p></div></div>
+              <div class="xp__item"><span class="marker" aria-hidden="true"></span><div><h4 class="title-s">Mobile application penetration testing</h4><p class="body-m">Performed static and dynamic analysis of mobile applications (mainly Android) to identify security flaws in logic, code, and implementation.</p></div></div>
+              <div class="xp__item"><span class="marker" aria-hidden="true"></span><div><h4 class="title-s">Web &amp; API penetration testing</h4><p class="body-m">Led targeted penetration testing against web applications and API endpoints, methodically exploiting vulnerabilities to demonstrate business impact.</p></div></div>
+              <div class="xp__item"><span class="marker" aria-hidden="true"></span><div><h4 class="title-s">DevSecOps</h4><p class="body-m">Integrated security into CI/CD pipelines by automating code analysis, dependency scanning, and container security with tools such as GitLab CI, SonarQube, and Trivy. Collaborated with developers and operations teams to embed security validation at every stage of the software delivery lifecycle, reducing deployment risk and improving system resilience.</p></div></div>
+              <div class="xp__item"><span class="marker" aria-hidden="true"></span><div><h4 class="title-s">Infrastructure &amp; network engineering</h4><p class="body-m">Designed and implemented core network infrastructure, including firewall policy configuration and VLAN segmentation to enforce security and optimize network traffic.</p></div></div>
+              <div class="xp__item"><span class="marker" aria-hidden="true"></span><div><h4 class="title-s">Network security monitoring</h4><p class="body-m">Built and managed a security monitoring system to track network activity, classify events, and generate alerts for suspicious behavior.</p></div></div>
+              <div class="xp__item"><span class="marker" aria-hidden="true"></span><div><h4 class="title-s">Enterprise firewall management</h4><p class="body-m">Configured, managed, and maintained enterprise firewall solutions, including Palo Alto Networks and Fortinet firewalls, ensuring secure network operations and effective threat mitigation.</p></div></div>
+              <div class="xp__item"><span class="marker" aria-hidden="true"></span><div><h4 class="title-s">Technical training delivery</h4><p class="body-m">Delivered technical cybersecurity training programs covering Cyber Threat Intelligence (CTI), Network Penetration Testing, Web Application Penetration Testing, and Mobile Application Penetration Testing to professionals and students, enhancing their offensive and defensive security capabilities.</p></div></div>
+              <div class="xp__item"><span class="marker" aria-hidden="true"></span><div><h4 class="title-s">Security project leadership</h4><p class="body-m">Led the development and implementation of large-scale security-focused projects, delivering solutions to strengthen the organization's cybersecurity posture and operational resilience.</p></div></div>
+              <div class="xp__item"><span class="marker" aria-hidden="true"></span><div><h4 class="title-s">CTF challenge authoring &amp; design</h4><p class="body-m">Authored and designed numerous CTF challenges across multiple categories, including Web Security, Mobile Security, API Security, Cryptography, and Miscellaneous.</p></div></div>
+            </div>
+          </article>
+
+          <!-- Bug hunting -->
+          <article class="xp card reveal">
+            <div class="xp__head" style="flex-direction: column; align-items: flex-start; grid-column: 1;">
+              <div>
+                <h3 class="title-l">Bug Hunting</h3>
+                <p class="xp__org title-s">HackerOne &middot; Bugcrowd</p>
+              </div>
+              <p class="xp__period label-l">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                01/2023 &ndash; Present
+              </p>
+              <p class="xp__type label-l">Freelance</p>
+            </div>
+            <div class="xp__list">
+              <div class="xp__item"><span class="marker" aria-hidden="true"></span><div><h4 class="title-s">Vulnerability disclosure programs</h4><p class="body-m">Engaged in Vulnerability Disclosure Programs, identifying vulnerabilities across 5+ organizations &mdash; including SQL injection, stored and reflected XSS, IDOR, business logic flaws, and information leakage.</p></div></div>
+              <div class="xp__item"><span class="marker" aria-hidden="true"></span><div><h4 class="title-s">Risk analysis &amp; recommendations</h4><p class="body-m">Analyzed security risks and provided recommendations to improve application security.</p></div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS / COMPETENCIES ===================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow label-mono">Competencies <span class="section-index">/ 03</span></p>
+          <h2 class="display-s">Core competencies</h2>
+          <p class="section-lead body-l">Offensive, defensive, infrastructure, and secure-development capabilities.</p>
+        </div>
+
+        <div class="comp-grid">
+          <article class="card comp-card reveal">
+            <h3 class="title-l"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 11 4.6-2.4 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>Offensive Security</h3>
+            <div class="chip-set">
+              <span class="chip">Vulnerability Assessment</span>
+              <span class="chip">Penetration Testing</span>
+              <span class="chip">Web App Pentesting</span>
+              <span class="chip">API Pentesting</span>
+              <span class="chip">Mobile (Android) Pentesting</span>
+              <span class="chip">Network Pentesting</span>
+              <span class="chip">Bug Bounty</span>
+            </div>
+          </article>
+
+          <article class="card comp-card reveal">
+            <h3 class="title-l"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span>Blue Team &amp; SOC</h3>
+            <div class="chip-set">
+              <span class="chip">Blue Team Operations</span>
+              <span class="chip">Security Operations (SOC)</span>
+              <span class="chip">Network Security Monitoring</span>
+              <span class="chip">Threat Detection</span>
+              <span class="chip">Log Analysis</span>
+              <span class="chip">Incident Investigation</span>
+              <span class="chip">Wazuh</span>
+              <span class="chip">Suricata</span>
+              <span class="chip">Zeek</span>
+              <span class="chip">Elastic Stack</span>
+            </div>
+          </article>
+
+          <article class="card comp-card reveal">
+            <h3 class="title-l"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></span>Infrastructure &amp; Network</h3>
+            <div class="chip-set">
+              <span class="chip">Firewall Policy Configuration</span>
+              <span class="chip">VLAN Segmentation</span>
+              <span class="chip">Palo Alto Networks</span>
+              <span class="chip">Fortinet / FortiGate</span>
+              <span class="chip">Linux Administration</span>
+              <span class="chip">Virtualization (VMware)</span>
+              <span class="chip">Docker</span>
+              <span class="chip">Kali Linux</span>
+            </div>
+          </article>
+
+          <article class="card comp-card reveal">
+            <h3 class="title-l"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>DevSecOps &amp; Secure Development</h3>
+            <div class="chip-set">
+              <span class="chip">CI/CD Security</span>
+              <span class="chip">GitLab CI</span>
+              <span class="chip">SonarQube</span>
+              <span class="chip">Trivy</span>
+              <span class="chip">Dependency Scanning</span>
+              <span class="chip">Container Security</span>
+              <span class="chip">Static &amp; Dynamic Analysis</span>
+              <span class="chip">Security Architecture</span>
+              <span class="chip">Remediation Advisory</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TOOLS ===================== -->
+    <section class="section" id="tools">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow label-mono">Toolchain <span class="section-index">/ 04</span></p>
+          <h2 class="display-s">Tools</h2>
+        </div>
+        <div class="card reveal">
+          <div class="chip-set">
+            <span class="chip chip--accent">Burp Suite</span>
+            <span class="chip chip--accent">Nessus</span>
+            <span class="chip chip--accent">Metasploit Framework</span>
+            <span class="chip chip--accent">Nmap</span>
+            <span class="chip chip--accent">Wireshark</span>
+            <span class="chip chip--accent">Sqlmap</span>
+            <span class="chip chip--accent">Ghauri</span>
+            <span class="chip chip--accent">Hydra</span>
+            <span class="chip chip--accent">Amass</span>
+            <span class="chip chip--accent">ZAP Proxy</span>
+            <span class="chip chip--accent">Postman</span>
+            <span class="chip chip--accent">httptoolkit</span>
+            <span class="chip chip--accent">JADX</span>
+            <span class="chip chip--accent">apktool</span>
+            <span class="chip chip--accent">MobSF</span>
+            <span class="chip chip--accent">PowerShell</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow label-mono">Selected work <span class="section-index">/ 05</span></p>
+          <h2 class="display-s">Featured projects</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="card card--interactive project state reveal">
+            <div class="project__top">
+              <span class="project__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+              <span class="project__num label-mono">01</span>
+            </div>
+            <h3 class="title-l">Web Reconnaissance Framework</h3>
+            <p class="body-m">A comprehensive web reconnaissance framework that gathers and catalogs target assets, performs extensive scans, conducts exhaustive content discovery, and generates automated reports &mdash; improving assessment efficiency and streamlining vulnerability detection.</p>
+            <div class="chip-set">
+              <span class="chip">Python</span>
+              <span class="chip">Asset Discovery</span>
+              <span class="chip">Content Discovery</span>
+              <span class="chip">Automated Reporting</span>
+            </div>
+          </article>
+
+          <article class="card card--interactive project state reveal">
+            <div class="project__top">
+              <span class="project__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></span>
+              <span class="project__num label-mono">02</span>
+            </div>
+            <h3 class="title-l">Network Security Monitoring</h3>
+            <p class="body-m">A centralized security monitoring system integrating Zeek, Suricata, and the Elastic Stack (Filebeat, Logstash, Elasticsearch, Kibana), with custom detection rules developed and tuned to organizational network behavior and security policies.</p>
+            <div class="chip-set">
+              <span class="chip">Zeek</span>
+              <span class="chip">Suricata</span>
+              <span class="chip">Elasticsearch</span>
+              <span class="chip">Logstash</span>
+              <span class="chip">Kibana</span>
+              <span class="chip">Detection Rules</span>
+            </div>
+          </article>
+
+          <article class="card card--interactive project state reveal">
+            <div class="project__top">
+              <span class="project__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17h6M4 7l4 4-4 4"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></span>
+              <span class="project__num label-mono">03</span>
+            </div>
+            <h3 class="title-l">Infrastructure Automation</h3>
+            <p class="body-m">Automated deployment and provisioning of infrastructure using cloud-init, Docker, and Linux &mdash; reducing manual setup and standardizing environments.</p>
+            <div class="chip-set">
+              <span class="chip">cloud-init</span>
+              <span class="chip">Docker</span>
+              <span class="chip">Linux</span>
+              <span class="chip">Automation</span>
+            </div>
+          </article>
+
+          <article class="card card--interactive project state reveal">
+            <div class="project__top">
+              <span class="project__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/><path d="M7 9l2 2-2 2"/></svg></span>
+              <span class="project__num label-mono">04</span>
+            </div>
+            <h3 class="title-l">Remote Access Infrastructure</h3>
+            <p class="body-m">A remote access platform built on Apache Guacamole with PostgreSQL, fronted by HAProxy and Traefik for reliable, secure connectivity.</p>
+            <div class="chip-set">
+              <span class="chip">Apache Guacamole</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">HAProxy</span>
+              <span class="chip">Traefik</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EDUCATION + AWARDS ===================== -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow label-mono">Background <span class="section-index">/ 06</span></p>
+          <h2 class="display-s">Education &amp; recognition</h2>
+        </div>
+        <div class="split">
+          <article class="card fact reveal">
+            <h3 class="title-l">Bachelor of Cybersecurity</h3>
+            <p class="sub title-s">Yarmouk University</p>
+            <div class="meta label-l">
+              <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>07/2020 &ndash; 07/2024</span>
+              <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Irbid, Jordan</span>
+            </div>
+            <span class="gpa label-l"><b>GPA 82</b> / 100</span>
+          </article>
+
+          <article class="card fact reveal">
+            <h3 class="title-l">2nd Place &mdash; NCSC CTF</h3>
+            <p class="sub title-s">National Cyber Security Center</p>
+            <div class="meta label-l">
+              <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>2022</span>
+            </div>
+            <p class="body-m">Achieved 2nd place out of 40 teams with team <strong style="color:var(--md-sys-color-on-surface)">Sup3r_N0va</strong> at the National Cyber Security Center (NCSC) CTF.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CREDENTIALS ===================== -->
+    <section class="section" id="credentials">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow label-mono">Credentials <span class="section-index">/ 07</span></p>
+          <h2 class="display-s">Certifications &amp; knowledge</h2>
+        </div>
+        <div class="cred-grid">
+          <article class="card cred reveal">
+            <h3 class="title-l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 8 22l4-2 4 2-1-7.5"/></svg>Certifications</h3>
+            <ul>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>
+                <span>Cyber Threat Intelligence Associate &mdash; CTIA (PGI)</span>
+                <span class="badge">Certified</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>
+                <span>Pentest+ (TryHackMe)</span>
+                <span class="badge">Certified</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card cred reveal">
+            <h3 class="title-l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg>Knowledge areas</h3>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg><span>eJPTv1</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg><span>eWPT</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg><span>eMAPT</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg><span>Security+</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg><span>Network+</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg><span>RedHat Linux System Administrator</span></li>
+            </ul>
+          </article>
+
+          <article class="card cred reveal">
+            <h3 class="title-l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg>Programming languages</h3>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg><span>Python</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg><span>PHP</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg><span>JavaScript</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg><span>Bash</span></li>
+            </ul>
+          </article>
+
+          <article class="card cred reveal" id="languages">
+            <h3 class="title-l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9Z"/></svg>Languages</h3>
+            <div class="langs">
+              <div class="lang-row"><span class="name body-l">Arabic</span><span class="level">Native</span></div>
+              <hr class="divider" />
+              <div class="lang-row"><span class="name body-l">English</span><span class="level">Professional working</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="hero__glow" aria-hidden="true"></div>
+          <p class="section-eyebrow label-mono" style="justify-content:center; color:var(--md-sys-color-primary)">Contact</p>
+          <h2 class="display-s">Let&rsquo;s work together</h2>
+          <p class="body-l">Open to security engagements, penetration testing, and collaboration. The fastest way to reach me is email.</p>
+          <div class="contact-links">
+            <a class="btn btn--filled state" href="mailto:osama.hussein.im@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+              osama.hussein.im@gmail.com
+            </a>
+            <a class="btn btn--tonal state" href="https://github.com/endline01" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 8.8 21.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7c-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.7-4.6 5 .3.3.6.9.6 1.8v2.7c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>
+              GitHub
+            </a>
+            <a class="btn btn--outlined state" href="https://medium.com/@endline01" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.4 7.1a.6.6 0 0 0-.2-.5L2.8 4.9v-.2h4.2l3.3 7.2 2.9-7.2H17v.2l-1.2 1.1a.3.3 0 0 0-.1.3v8.8a.3.3 0 0 0 .1.3l1.1 1.1v.2h-5.6v-.2l1.2-1.2c.1-.1.1-.1.1-.3V8.1l-3.3 8.3h-.4L5.2 8.1v5.6c0 .2.1.4.2.6l1.5 1.9v.2H2.8v-.2l1.5-1.9c.1-.2.2-.4.1-.6V7.1Z"/><path d="M19 5h3v.2l-1 1c-.1 0-.1.1-.1.2v8.6c0 .1 0 .2.1.2l1 1v.2h-5v-.2l1-1c.1-.1.1-.1.1-.2V6.6L19 5Z" opacity="0"/></svg>
+              Medium
+            </a>
+          </div>
+          <!-- Phone intentionally omitted for privacy.
+               To enable, uncomment:
+          <p class="body-m" style="margin-top:1.25rem">Phone: <a href="tel:+962XXXXXXXXX">+962 …</a></p>
+          -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="body-m">&copy; <span id="year">2026</span> Osama Hussein &middot; Amman, Jordan</p>
+      <div class="footer__links">
+        <a class="state" href="mailto:osama.hussein.im@gmail.com" aria-label="Email Osama Hussein">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        </a>
+        <a class="state" href="https://github.com/endline01" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 8.8 21.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7c-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.7-4.6 5 .3.3.6.9.6 1.8v2.7c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>
+        </a>
+        <a class="state" href="https://medium.com/@endline01" target="_blank" rel="noopener noreferrer" aria-label="Medium (opens in a new tab)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.4 7.1a.6.6 0 0 0-.2-.5L2.8 4.9v-.2h4.2l3.3 7.2 2.9-7.2H17v.2l-1.2 1.1a.3.3 0 0 0-.1.3v8.8a.3.3 0 0 0 .1.3l1.1 1.1v.2h-5.6v-.2l1.2-1.2c.1-.1.1-.1.1-.3V8.1l-3.3 8.3h-.4L5.2 8.1v5.6c0 .2.1.4.2.6l1.5 1.9v.2H2.8v-.2l1.5-1.9c.1-.2.2-.4.1-.6V7.1Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

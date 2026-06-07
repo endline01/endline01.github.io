@@ -1,0 +1,102 @@
+# Osama Hussein — Portfolio
+
+A single-page, static personal portfolio for **Osama Hussein** — Cybersecurity
+Specialist, Penetration Tester, and Information Security Officer. Built on
+**Material Design 3** (color roles, type scale, elevation, shape, state layers,
+and motion) with light/dark themes. No backend, no build step to deploy.
+
+---
+
+## Run it
+
+It's plain static files — open `index.html`, or serve the folder:
+
+```powershell
+# From the project root (F:\ME\Portfolio)
+python -m http.server 8080
+# then visit http://127.0.0.1:8080/
+```
+
+Any static host works (GitHub Pages, Netlify, Cloudflare Pages, S3): just upload
+the folder. The only external runtime request is to Google Fonts (Roboto +
+Roboto Mono); if that's blocked, the site falls back to system fonts.
+
+---
+
+## Project structure
+
+```
+Portfolio/
+├─ index.html              # All content + markup (the 12 sections)
+├─ css/
+│  ├─ theme.css            # GENERATED M3 color tokens (light + dark)
+│  └─ styles.css           # System layer: type scale, shape, elevation,
+│                          #   state layers, motion, layout, components
+├─ js/
+│  └─ main.js              # Theme toggle, mobile nav, scroll-spy, reveal motion
+├─ tools/
+│  └─ generate_theme.py    # Re-generates css/theme.css from one seed color
+└─ README.md
+```
+
+---
+
+## Changing the color scheme (one place)
+
+The entire palette is derived from a **single seed color**. To re-theme the whole
+site:
+
+1. Open `tools/generate_theme.py` and edit the `SEED` value near the top:
+
+   ```python
+   SEED = "#1F5E66"   # deep teal/slate — change to any hex color
+   ```
+
+2. Regenerate the tokens:
+
+   ```powershell
+   python tools/generate_theme.py
+   ```
+
+   This overwrites `css/theme.css` with a fresh, full M3 scheme (all color roles,
+   light and dark).
+
+> **How it works:** In Material Design 3 a *tone* is CIELAB lightness (L\*). The
+> generator builds each tonal palette by fixing a hue + target chroma and
+> sweeping the tone 0→100, clipping chroma to the sRGB gamut — the M3 model,
+> implemented in pure Python (no dependencies). Primary/secondary/tertiary/
+> neutral/neutral-variant come from the seed using M3's standard chroma targets;
+> the error palette uses M3's canonical constant tones.
+
+### Light / dark behavior
+- With **no** `data-theme` attribute on `<html>`, the site follows the OS via
+  `prefers-color-scheme`.
+- The header toggle sets `data-theme="light"` or `"dark"` and persists the choice
+  in `localStorage` (applied before first paint to avoid a flash).
+
+---
+
+## Editing content
+
+All content lives in **`index.html`**, organized by section with clear comment
+banners (`<!-- ===== EXPERIENCE ===== -->`, etc.). Every claim comes from the
+résumé and the curated context — there are no placeholder/lorem values.
+
+- **Skills / Tools / Project tags** are `<span class="chip">…</span>` items —
+  add or remove `<span>`s inside the relevant `.chip-set`.
+- **Experience bullets** are `.xp__item` blocks (a `<h4>` + `<p>`).
+- **Phone number** is intentionally omitted for privacy. To enable it, uncomment
+  the commented block at the bottom of the Contact section in `index.html`.
+
+---
+
+## Accessibility & performance
+
+- Semantic landmarks (`header`/`main`/`footer`/`nav`/`section`), a skip link,
+  visible focus rings, `aria-current` on the active nav item, and a keyboard-
+  and Escape-dismissible mobile navigation drawer.
+- All key text/background pairs meet **WCAG AA** (≥ 4.5:1) in both themes.
+- Respects `prefers-reduced-motion` (reveal animations and smooth scroll are
+  disabled).
+- No frameworks, no bundler, ~1 small JS file; inline SVG icons (no icon font).
+```

@@ -1,0 +1,12 @@
+# Claude Code project config
+.claude/
+
+# Build/preview artifacts
+.preview-*.png
+tools/__pycache__/
+__pycache__/
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
