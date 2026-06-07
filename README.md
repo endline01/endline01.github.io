@@ -23,6 +23,42 @@ Roboto Mono); if that's blocked, the site falls back to system fonts.
 
 ---
 
+## Publish to GitHub Pages → https://endline01.github.io
+
+This repo is already initialized and committed on `main`, with the remote set to
+`https://github.com/endline01/endline01.github.io.git`.
+
+1. **Create the repo on GitHub** (must be **public** for Pages on a free plan):
+   go to <https://github.com/new>, set **Repository name** to exactly
+   `endline01.github.io`, leave it **empty** (no README / .gitignore / license),
+   and click *Create repository*.
+
+2. **Push** from the project root:
+
+   ```powershell
+   git push -u origin main
+   ```
+
+   On first push, Git Credential Manager opens a browser to sign in to GitHub.
+
+3. **Confirm Pages is on:** in the repo, **Settings → Pages** → *Build and
+   deployment* → **Source: Deploy from a branch**, **Branch: `main` / `(root)`**,
+   then *Save*. For a `username.github.io` repo this is usually auto-enabled.
+
+4. Wait ~1 minute, then visit **https://endline01.github.io**.
+
+**Updating later:** edit files, then
+
+```powershell
+git add -A
+git commit -m "Update content"
+git push
+```
+
+Pages redeploys automatically within a minute or so.
+
+---
+
 ## Project structure
 
 ```
