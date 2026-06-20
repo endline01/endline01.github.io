@@ -10,3 +10,7 @@ __pycache__/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Design source (not part of the published site)
+Endline01-Portfolio-Design/
+Endline01-Portfolio-Design.zip

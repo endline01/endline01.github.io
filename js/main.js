@@ -102,8 +102,7 @@
     about: "about", experience: "experience",
     skills: "skills", tools: "skills",
     projects: "projects",
-    education: "credentials", credentials: "credentials",
-    contact: "contact"
+    credentials: "credentials"
   };
   var observed = Object.keys(sectionToLink)
     .map(function (id) { return document.getElementById(id); })
@@ -161,25 +160,5 @@
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       v.removeAttribute("autoplay"); v.pause();
     }
-  })();
-
-  /* ── Hero name: one-time "decode" / text-scramble on load ─────────────────*/
-  (function decodeName() {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    var el = document.getElementById("heroName");
-    if (!el) return;
-    var final = el.getAttribute("data-text") || el.textContent;
-    var pool = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789#%&/<>*".split("");
-    var reveal = 0;
-    var tick = setInterval(function () {
-      var out = "";
-      for (var i = 0; i < final.length; i++) {
-        if (final[i] === " ") { out += " "; continue; }
-        out += i < Math.floor(reveal) ? final[i] : pool[(Math.random() * pool.length) | 0];
-      }
-      el.textContent = out;
-      reveal += 1.1;
-      if (reveal >= final.length) { el.textContent = final; clearInterval(tick); }
-    }, 38);
   })();
 })();
